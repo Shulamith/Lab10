@@ -1,0 +1,38 @@
+* Please fill out this section:
+** Name: 
+** GitHub username:
+
+* Lab 10
+
+* File structure:
+- README.org - this file. fill out the top and use it for notes
+- Makefile
+- main.cpp - main driver
+- funcs.h / funcs.cpp -- add your functions here.
+- test.cpp - add your tests
+- doctest.h - testing library
+
+The full text of the 136 version of the lab can be found here:
+https://maryash.github.io/135/labs/lab_06.html
+
+
+* Overall notes:
+- Write your functions in funcs.cpp
+- Write your tests in test.cpp
+- I will test your program by running ~make test~ then ~./test~
+- Don't add .o, executable or any extraneous files to the repo
+- You should commit and push your work frequently
+- make sure to add sufficient tests to show that everything works
+ 
+* Specifc changes to the lab
+** Adding the class
+- add the class ~time~ to a file ~time.cpp~ and make the appropriate
+  changes to the other files in the repo using the previous lab and
+  what you did with the ~Coord3D~ class in ~Coord3D.h~ as a guide.
+** Testing
+Use doctests to show that each task is completed. As usual running the
+tests should not require any user input.
+
+
+* Lab Link
+Link: https://maryash.github.io/135/labs/lab_10.html
