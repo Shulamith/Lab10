@@ -13,7 +13,7 @@
 - doctest.h - testing library
 
 The full text of the 136 version of the lab can be found here:
-https://maryash.github.io/135/labs/lab_06.html
+https://maryash.github.io/135/labs/lab_10.html
 
 
 * Overall notes:
