@@ -1,6 +1,6 @@
 * Please fill out this section:
-** Name: 
-** GitHub username:
+** Name: Shulamith Dashevsky
+** GitHub username:Shulamith
 
 * Lab 10
 
