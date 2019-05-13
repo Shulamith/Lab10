@@ -31,7 +31,7 @@ Time addMinutes(Time time0, int min){
   // if (min>=60) {
     temp_hrs = temp_min / 60 + time0.h;
     temp_min = temp_min % 60;
-    
+
   // }
   result.h = temp_hrs;
   result.m = temp_min;
@@ -72,4 +72,27 @@ TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie){
   next.startTime = addMinutes(ts.startTime, ts.movie.duration);
   printTimeSlot(next);
   return next;
+}
+bool timeOverlap(TimeSlot ts1, TimeSlot ts2){
+  int min_difference;
+  bool overlap;
+  Time endtime1 = addMinutes(ts1.startTime, ts1.movie.duration);
+  Time endtime2 = addMinutes(ts2.startTime, ts2.movie.duration);
+  min_difference = minutesUntil(ts1.startTime, ts2.startTime);
+  if (min_difference>=0) {
+    if (minutesUntil(endtime1,ts2.startTime)<0) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  else{
+    if (minutesUntil(endtime2,ts1.startTime)<0) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

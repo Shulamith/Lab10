@@ -34,5 +34,22 @@ TEST_CASE("TASK C"){
   printTimeSlot(morning);
   //CHECK(res1 == "Back to the Future 1 (116min) [starts at 9:15, ends by 11:11]");
 }
+TEST_CASE("TASK E"){
+  Movie movie1 = {"Back to the Future", COMEDY, 116};
+  Movie movie2 = {"Black Panther", ACTION, 134};
+  Movie movie3 = {"Pirates of the Caribbean", ACTION, 155};
+  Movie movie4 = {"Blazing Saddles", COMEDY, 95};
+  TimeSlot morning = {movie1, {9, 15}};
+  TimeSlot daytime = {movie2, {12, 15}};
+  TimeSlot evening = {movie2, {16, 45}};
+  TimeSlot night = {movie3,{20,00}};
+  TimeSlot dawn = {movie4, {5,30}};
+  TimeSlot noon = {movie4, {12, 00}};
+  CHECK(timeOverlap(daytime,noon)==true);
+  CHECK(timeOverlap(noon,daytime)==true);
+  CHECK(timeOverlap(dawn,evening)==false);
+  CHECK(timeOverlap(daytime,morning)==false);
+
+}
 
 // etc.
