@@ -20,6 +20,7 @@ TimeSlot morning = {movie1, {9, 15}};
 TimeSlot daytime = {movie2, {12, 15}};
 TimeSlot evening = {movie2, {16, 45}};
 printTimeSlot(morning);
+scheduleAfter(morning, movie1);
 
   return 0;
 }

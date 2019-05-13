@@ -1,7 +1,7 @@
 #include "funcs.h"
 #include "time.h"
 #include <iostream>
-
+#include <string>
 
 // Sample function
 
@@ -31,6 +31,7 @@ Time addMinutes(Time time0, int min){
   // if (min>=60) {
     temp_hrs = temp_min / 60 + time0.h;
     temp_min = temp_min % 60;
+    
   // }
   result.h = temp_hrs;
   result.m = temp_min;
@@ -48,10 +49,27 @@ void printMovie(Movie mv){
     std::cout << mv.title << " " << g << " (" << mv.duration << " min)";
 }
 void printTimeSlot(TimeSlot ts){
+  //std::string ans = "";
+  std::string title, genre, duration, startTimeH, startTimeM, endTimeH, endTimeM;
   Time endtime = addMinutes(ts.startTime, ts.movie.duration);
   std::cout << ts.movie.title << " " << ts.movie.genre << " (" << ts.movie.duration << "min)";
   std::cout << " [starts at " << ts.startTime.h << ":" << ts.startTime.m << ", ends by " << endtime.h;
   std::cout << ":" << endtime.m << "]" <<std::endl;
-
+  // title = ts.movie.title;
+  // genre = ts.movie.genre;
+  // duration = ts.movie.duration;
+  // startTimeH = std::to_string(ts.startTime.h);
+  // startTimeM = ts.startTime.m;
+  // endTimeH = endtime.h;
+  // endTimeM = endtime.m;
+  // ans = ans + title + " " + genre + " (" + duration + "min)";
+  // ans = ans + " [starts at " + startTimeH + ":" + startTimeM + ", ends by " + endTimeH + ":" + endTimeM; + "]\n";
+  // return ans;
 }
-// Write all your functions in here
+TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie){
+  TimeSlot next;
+  next.movie = nextMovie;
+  next.startTime = addMinutes(ts.startTime, ts.movie.duration);
+  printTimeSlot(next);
+  return next;
+}
